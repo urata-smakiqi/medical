@@ -1,0 +1,17 @@
+[
+  {
+      "symptoms": ["fever", "cough", "sore throat"],
+      "medical_history": "No significant history.",
+      "diagnosis": "Common Cold"
+  },
+  {
+      "symptoms": ["chest pain", "shortness of breath"],
+      "medical_history": "Previous heart issues.",
+      "diagnosis": "Possible Heart Attack"
+  },
+  {
+      "symptoms": ["headache", "nausea"],
+      "medical_history": "Migraines.",
+      "diagnosis": "Migraine"
+  }
+]
