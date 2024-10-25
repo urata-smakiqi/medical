@@ -37,7 +37,7 @@ medical_cases = [
 ]
 def add_medical_cases_to_index(cases):
     for case in cases:
-        text = f"Symptoms: {case['symptoms']} History: {case['history']}"
+        text = "Symptoms: {case['symptoms']} History: {case['history']}"
         embedding = embeddings.embed_query(text)
         faiss_index.index.add(np.array([embedding], dtype=np.float32))
         faiss_index.index_to_docstore_id[len(faiss_index.index_to_docstore_id)] = case['diagnosis']
