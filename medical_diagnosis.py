@@ -10,8 +10,8 @@ import openai
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-openai_api_key = st.secrets["openai"]["api_key"]
-embeddings = OpenAIEmbeddings()
+
+embeddings = OpenAIEmbeddings
 dimension = 1536
 index = faiss.IndexFlatL2(dimension)
 faiss_index = FAISS(embedding_function=embeddings.embed_query, index=index, docstore=None, index_to_docstore_id={})
