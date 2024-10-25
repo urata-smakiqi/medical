@@ -10,7 +10,7 @@ import openai
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
+openai.api_key = st.secrets["openai"]["api_key"]
 
 embeddings = OpenAIEmbeddings()
 dimension = 1536
