@@ -13,7 +13,6 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 embeddings = OpenAIEmbeddings
-embedder = OpenAIEmbeddings
 dimension = 1536
 index = faiss.IndexFlatL2(dimension)
 faiss_index = FAISS(embedding_function=embeddings.embed_query, index=index, docstore=None, index_to_docstore_id={})
@@ -39,7 +38,6 @@ medical_cases = [
 def add_medical_cases_to_index(cases):
     for case in cases:
         text = f"Symptoms: {case['symptoms']} History: {case['history']}"
-        query_embedding = embedder.embed_query("fever, headache")
         embedding = embeddings.embed_query(text)
         faiss_index.index.add(np.array([embedding], dtype=np.float32))
         faiss_index.index_to_docstore_id[len(faiss_index.index_to_docstore_id)] = case['diagnosis']
