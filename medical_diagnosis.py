@@ -43,7 +43,7 @@ def add_medical_cases_to_index(cases):
         faiss_index.index_to_docstore_id[len(faiss_index.index_to_docstore_id)] = case['diagnosis']
 
 def diagnose(symptoms, history):
-    query = f"Symptoms: {symptoms} History: {history}"
+    query = "Symptoms: {symptoms} History: {history}"
     query_embedding = embeddings.embed_query(query)
     distances, indices = faiss_index.index.search(np.array([query_embedding], dtype=np.float32), k=3) 
     
