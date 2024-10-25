@@ -12,9 +12,6 @@ load_dotenv()
 # Get the OpenAI API key
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
-if openai_api_key is None:
-    raise ValueError("API key not found. Please set the OPENAI_API_KEY environment variable.")
-
 # Initialize OpenAI embeddings
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
