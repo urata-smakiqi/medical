@@ -13,6 +13,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 embeddings = OpenAIEmbeddings
+embedder = OpenAIEmbeddings
 dimension = 1536
 index = faiss.IndexFlatL2(dimension)
 faiss_index = FAISS(embedding_function=embeddings.embed_query, index=index, docstore=None, index_to_docstore_id={})
