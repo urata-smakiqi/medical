@@ -1,8 +1,8 @@
 from dotenv import load_dotenv
 import faiss
 import numpy as np
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
 import streamlit as st
 from dotenv import load_dotenv
 import os
@@ -11,7 +11,7 @@ import json
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
+openai.api_key = st.secrets["openai"]["api_key"]
 embeddings = OpenAIEmbeddings()
 dimension = 1536
 index = faiss.IndexFlatL2(dimension)
